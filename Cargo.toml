@@ -1,0 +1,23 @@
+[package]
+name = "boarding_pass"
+version = "0.1.0"
+authors = ["Aleksandr Bochev <aleksandr.bochev@zalando.de>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# Config
+dotenv = "0.15.0"
+
+# Logs
+log = "0.4.14"
+env_logger = "0.9.0"
+
+#telegram-bot = "0.8.0"
+telegram-bot = { git ="https://github.com/telegram-rs/telegram-bot" }
+
+# IO
+tokio = { version = "1", features = ["full"] } # because of telegram-bot
+futures = "0.3"
+redis = { version = "0.17.0", features = ["tokio-comp"] }
